@@ -2,12 +2,12 @@ import * as firebase from 'firebase/app'
 import 'firebase/firestore';
 
 const app = firebase.initializeApp ({
-    apiKey: "AIzaSyDgDquWb87TgSq8iTSrZDOlf8WOR35BdK4",
-    authDomain: "hobbweebshop.firebaseapp.com",
-    projectId: "hobbweebshop",
-    storageBucket: "hobbweebshop.appspot.com",
-    messagingSenderId: "300124445735",
-    appId: "1:300124445735:web:5f710711347307c8ea4202"
+    apiKey: "AIzaSyCbCra8TqPcQnPJb_GvEe4VPdZGXbMmw80",
+    authDomain: "hobbies-store.firebaseapp.com",
+    projectId: "hobbies-store",
+    storageBucket: "hobbies-store.appspot.com",
+    messagingSenderId: "49710932213",
+    appId: "1:49710932213:web:17828d0aa5c1649cc025bc"
 });
 
 export function getFirebase() {
