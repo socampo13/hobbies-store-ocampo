@@ -1,19 +1,15 @@
-import * as firebase from 'firebase/app'
+import firebase from 'firebase/app'
 import 'firebase/firestore';
 
-const app = firebase.initializeApp ({
+var firebaseConfig = {
     apiKey: "AIzaSyCbCra8TqPcQnPJb_GvEe4VPdZGXbMmw80",
     authDomain: "hobbies-store.firebaseapp.com",
     projectId: "hobbies-store",
     storageBucket: "hobbies-store.appspot.com",
     messagingSenderId: "49710932213",
     appId: "1:49710932213:web:17828d0aa5c1649cc025bc"
-});
+};
 
-export function getFirebase() {
-    return app;
-}
+const fb = firebase.initializeApp(firebaseConfig);
 
-export function dataBase() {
-    return firebase.firestore(app);
-}
+export const dataBase = fb.firestore();
