@@ -6,6 +6,7 @@ import { CartComponentContext } from './Context/CartContext';
 
 
 const App = props => {
+  
   return<>
     <CartComponentContext>
       <BrowserRouter>

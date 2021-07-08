@@ -1,7 +1,7 @@
 export const navBarStyles = theme => {
     return({
         appBar: {
-            backgroundColor: '#f5ab00',
+            backgroundColor: '#81B622',
             position: 'static'
 
         },
@@ -13,18 +13,18 @@ export const navBarStyles = theme => {
         },
         title:{
             flexGrow: 1,
-            fontFamily: 'Rubik',   
+            fontFamily: 'Bubblegum Sans, cursive',   //Font Bubblegum
             fontWeight: 400
         },
         titleLink:{
             textDecoration: 'none',
-            color: '#ffffff'
+            color: '#31352E'
         },
         buttons:{
-            color: '#5c4000',
+            color: '#31352E',
             fontSize: '1rem',
             fontWeight: 400,
-            fontFamily: 'Rubik',
+            fontFamily: 'Bubblegum Sans, cursive',
             '&:hover':{
                 color: '#ffffff',
                 backgroundColor: 'transparent'

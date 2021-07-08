@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { AppBar, Toolbar, Typography } from 'material-ui/AppBar'
+import { AppBar, Toolbar, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { navBarStyles } from './NavBarStyles'
 import { CartWidget } from './components/CartWidget/CartWidget'
@@ -23,13 +23,13 @@ export const NavBar = props => {
                 </Typography>
                 <ul className={classes.list}>
                     <li>
-                        <Link className={classes.buttons} to={`/category/${figuras}`}>Camisetas</Link>
+                        <Link className={classes.buttons} to={`/category/${figuras}`}>Figuras de Colección</Link>
                     </li>
                     <li>
-                        <Link className={classes.buttons} to={`/category/${tradingCardGames}`}>Pelotas</Link>
+                        <Link className={classes.buttons} to={`/category/${tradingCardGames}`}>Trading Card Games</Link>
                     </li>
                     <li>
-                        <Link className={classes.buttons} to={`/category/${decoracion}`}>Aros</Link>
+                        <Link className={classes.buttons} to={`/category/${decoracion}`}>Decoración</Link>
                     </li>
                 </ul>
                 {itemsCart.length > 0 ? <CartWidget/> : ''}

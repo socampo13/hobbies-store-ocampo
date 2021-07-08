@@ -12,7 +12,7 @@ const commonAlign = {
 }
 
 const commonColor = {
-    color: '#5c4000'
+    color: '#81B622'
 }
 
 export const counterStyles = theme => {
@@ -36,11 +36,11 @@ export const counterStyles = theme => {
             ...commonAlign,
             marginTop: '10px',
             border: 'solid 1px #5c4000',
-            fontFamily: 'Rubik',
+            fontFamily: 'Bubblegum Sans, cursive',
             ...commonColor,
             '&:hover':{
-                color: '#FFFFFF',
-                backgroundColor: '#5c4000',
+                color: '#31352E',
+                backgroundColor: '#81B622',
             }
         },
         counterButtons:{

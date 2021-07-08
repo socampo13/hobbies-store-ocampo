@@ -14,16 +14,16 @@ export const finishPurchaseButtonStyles = theme => {
             textDecoration: 'none',
             borderRadius: '4px',
             border: 'solid 1px #5c4000',
-            fontFamily: 'Rubik',
+            fontFamily: 'Bubblegum Sans, cursive',
             width: '10em',
-            color: '#5c4000',
+            color: '#81B622',
             padding: '6px 8px',
             textTransform: 'uppercase',
             textAlign: 'center',
             margin:'2.5px 0',
             fontSize: '0.875rem',
             '&:hover':{
-                color: '#FFFFFF',
+                color: '#31352E',
                 backgroundColor: '#5c4000',
             }
 
