@@ -1,5 +1,10 @@
 export const cartGridStyles = theme => {
     return({
+        generalContainer:{
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column'
+        },
         container:{
             display: 'flex',
             justifyContent: 'center'
@@ -18,6 +23,16 @@ export const cartGridStyles = theme => {
             '&:hover':{
                 color: '#ff0000'
             }
-        }
+        },
+        buttonDelete: {
+            marginTop: '10px',
+            border: 'solid 1px #5c4000',
+            fontFamily: 'Rubik',
+            color: '#5c4000',
+            '&hover':{
+                color: '#FFFFF',
+                backgroundColor: '#5c4000',
+            }
+        },
     })
 }

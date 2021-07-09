@@ -16,10 +16,11 @@ const useStyle = makeStyles((theme) => cartGridStyles(theme));
 
 export const CartGrid = () => {
 
-    const {itemsCart, removeItem, subTotal} = useContext(CartContext)
+    const {itemsCart, removeItem, subTotal, clear} = useContext(CartContext)
     const classes = useStyle();
 
     return<div className={classes.container}>
+      <div className={classes.container}>
     <TableContainer component={Paper} className={classes.tableContainer}>
       <Table>
         <TableHead className={classes.headerTable}>
@@ -56,5 +57,12 @@ export const CartGrid = () => {
         </TableBody>
       </Table>
     </TableContainer>
+    </div>
+
+    <div className={classes.coontainer}>
+      <Button className={classes.buttonDelete} onClick={clear}>Borrar carrito</Button>
+    </div>        
+
+
     </div>
 }
