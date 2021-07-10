@@ -1,36 +1,50 @@
 import React, { useEffect, useState } from 'react';
 import { ItemList } from '../ItemList/ItemList.js'
-/* import { useParams } from 'react-router-dom';
-import { myPromise } from '../../Services/Promise/Promise.js'; */
+import { useParams } from 'react-router-dom';
+//import { myPromise } from '../../Services/Promise/Promise.js'; 
 import { dataBase } from '../../Firebase/firebase.js';
 
 export const ItemListContainer = props => {
 
-    const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState(false);
+    const [productos, setProductos] = useState([]);
+    const {categoryId} = useParams();
+    //const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        setLoading(true);
-        const db = dataBase();
-        const productCollection = db.collection('items');
-        productCollection.get().then((querySnapshot) => {
-            if(querySnapshot.size === 0) {
-                return ( 
-                    <h2>Lo sentimos, en este momento no podemos mostrar lo que buscas. Intena más tarde.</h2>
-                )
-            }
-            setProductos(querySnapshot.docs.map(doc => ({
-                data: doc.data(),
-                id: doc.id
-            })));
-        }).catch((error) => {
-            console.log('Error buscando', error);
-        }).finally(() => {
-            setLoading(false);
-        })
-    }, [])
+        const itemCollection = dataBase.collection("productos");
 
-    const ordenes = dataBase.collection('ordenes');
+        if(categoryId === undefined){
+            itemCollection.get().then((querySnapshot) => {
+                if(querySnapshot.size === 0){
+                    console.log('Sin resultados')
+                }
+                setProductos(querySnapshot.docs.map(doc => (
+                    {
+                        id: doc.id,
+                        data: doc.data()
+                    }
+                )));
+            }).catch((error) => {
+                console.log('Error:', error)
+            })
+        }else {
+            itemCollection.where("category", "==", categoryId).get().then((querySnapshot) => {
+                if(querySnapshot.size === 0){
+                    console.log('Sin resultados')
+                }
+                setProductos(querySnapshot.docs.map(doc => (
+                    {
+                        id: doc.id,
+                        data: doc.data()
+                    }
+                )));
+            }).catch((error) => {
+                console.log('Error:', error)
+            })
+        }
+    }, [categoryId])
+
+    /* const ordenes = dataBase.collection('ordenes');
     const newOrder = {
         buyer: userInfo,
         items: cart,
@@ -44,8 +58,8 @@ export const ItemListContainer = props => {
     }).finally(() => {
         setLoading(false)
     });
-
-    const batch = dataBase.batch();
+ */
+   /*  const batch = dataBase.batch();
     const newBuyer = dataBase.collection("buyer").doc();
     batch.set(newBuyer, {
         name: 'Simon',
@@ -79,7 +93,7 @@ export const ItemListContainer = props => {
             });
         }
     })
-
+ */
 
     return<>
         <ItemList productos={productos}/>

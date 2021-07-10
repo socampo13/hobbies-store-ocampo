@@ -40,7 +40,7 @@ export const CartComponentContext = props => {
     }
 
     useEffect(() => {
-        console.log('Carrito Actualizado:', itemsCart)
+        console.log('Actualizado:', itemsCart)
     }, [itemsCart])
 
     return <CartContext.Provider value={{itemsCart, addItem, clear, removeItem, subTotal, itemsQuantity}}>

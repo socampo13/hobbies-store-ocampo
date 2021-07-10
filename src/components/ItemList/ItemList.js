@@ -15,10 +15,10 @@ export const ItemList = props => {
         {
             productos.length === 0 ? (<div className={classes.root}><LinearProgress/></div>) : (<Grid container>
                 <Grid item xs={12}>
-                    <Grid container justify="center" >
+                    <Grid container justify="center">
                         {productos.map((producto) => <Item
                         key={producto.id}
-                        producto={producto}
+                        producto={{id: producto.id, data: producto.data}}
                         />)
                         }
                     </Grid>
