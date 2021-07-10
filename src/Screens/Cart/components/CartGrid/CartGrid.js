@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { Button } from '@material-ui/core';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -22,6 +23,7 @@ export const CartGrid = () => {
     return<div className={classes.container}>
       <div className={classes.container}>
     <TableContainer component={Paper} className={classes.tableContainer}>
+
       <Table>
         <TableHead className={classes.headerTable}>
           <TableRow>
@@ -32,6 +34,7 @@ export const CartGrid = () => {
             <TableCell align="center"></TableCell>
           </TableRow>
         </TableHead>
+
         <TableBody>
           {itemsCart.map((item) => (
             <TableRow key={item.item.id}>
@@ -48,6 +51,7 @@ export const CartGrid = () => {
                 </TableCell>
             </TableRow>
           ))}
+          
           <TableCell></TableCell>
           <TableCell></TableCell>
           <TableCell align="center">Total:</TableCell>
