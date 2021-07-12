@@ -9,8 +9,8 @@ export const ItemDetailContainer = props => {
     const {productId} = useParams();
     
 
-    useEffect( () => {
-        const itemCollection = dataBase.collection("productos");
+    useEffect(() => {
+        const itemCollection = dataBase.collection("items");
         const item = itemCollection.doc(productId)
 
         item.get().then((doc) => {
@@ -23,7 +23,7 @@ export const ItemDetailContainer = props => {
         }).catch((error) => {
             console.log('Error', error)
         })
-    }, []);
+    }, [productId])
 
     return<>
        {

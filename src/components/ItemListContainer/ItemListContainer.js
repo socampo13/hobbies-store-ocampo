@@ -11,7 +11,7 @@ export const ItemListContainer = props => {
     //const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        const itemCollection = dataBase.collection("productos");
+        const itemCollection = dataBase.collection("items");
 
         if(categoryId === undefined){
             itemCollection.get().then((querySnapshot) => {
