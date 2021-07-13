@@ -5,15 +5,16 @@ import { Router } from './Router/Router';
 import { CartComponentContext } from './Context/CartContext';
 
 
-const App = props => {
-  
-  return<>
+function App() {
+  return(
+  <div className="App">
     <CartComponentContext>
       <BrowserRouter>
         <Router />
       </BrowserRouter>
     </CartComponentContext>
-  </>
+  </div>
+  );
 }
 
 export default App;

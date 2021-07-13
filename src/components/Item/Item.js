@@ -19,9 +19,9 @@ export const Item = props => {
             <CardActionArea>
                 <CardMedia
                     component='img'
-                    image= {producto.data.picture.pictureUrl}
+                    image= {producto.data.pictureUrl}
                     width="200"
-                    title= {producto.data.picture.alt}
+                    title= {producto.data.titulo}
                 />
                 <CardContent>
                     <Typography  component="h2" className={classes.titulo}>
