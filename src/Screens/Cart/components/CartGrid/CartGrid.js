@@ -39,7 +39,7 @@ export const CartGrid = () => {
           {itemsCart.map((item) => (
             <TableRow key={item.item.id}>
               <TableCell component="th" scope="row" align="center">
-                  <img src={item.item.picture.pictureUrl} alt={item.item.picture.alt} className={classes.imgProducto}></img>
+                  <img src={item.pictureUrl} alt={item.alt} className={classes.imgProducto}></img>
               </TableCell>
               <TableCell align="center">{item.item.title}</TableCell>
               <TableCell align="center">{item.quantity}</TableCell>

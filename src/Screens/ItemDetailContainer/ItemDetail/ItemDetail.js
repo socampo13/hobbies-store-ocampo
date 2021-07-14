@@ -43,8 +43,8 @@ export const ItemDetail = props => {
                 <Card>
                     <CardMedia
                         component='img'
-                        image= {detalleProducto.picture.pictureUrl}
-                        title= {detalleProducto.picture.alt}  
+                        image= {detalleProducto.pictureUrl}
+                        title= {detalleProducto.alt}  
                     />
                 </Card>
             </Grid>
