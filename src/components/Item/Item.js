@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { itemStyles } from './ItemStyles'
-import Card from 'material-ui/Card';
+import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea'
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -31,7 +31,6 @@ export const Item = props => {
                     </Typography>
                     <Typography  color="textSecondary" component="p">{producto.data.description}</Typography>
                     <Typography  className={classes.precio}>${producto.data.price}</Typography>
-                    <Typography  variant="h6" component="p">ID: {producto.id}</Typography>
                 </CardContent>
             </CardActionArea>
         </Card>

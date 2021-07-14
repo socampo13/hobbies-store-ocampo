@@ -63,7 +63,7 @@ export const CartGrid = () => {
     </TableContainer>
     </div>
 
-    <div className={classes.coontainer}>
+    <div className={classes.container}>
       <Button className={classes.buttonDelete} onClick={clear}>Borrar carrito</Button>
     </div>        
 
