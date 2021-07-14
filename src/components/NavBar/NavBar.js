@@ -10,8 +10,8 @@ const useStyle = makeStyles((theme) => navBarStyles(theme));
 
 export const NavBar = props => {
     const {itemsCart} = useContext(CartContext)
-    const figuras = "figuras"
-    const tradingCardGames = "tradingCardGames"
+    const figuras = "figura"
+    const tradingCardGames = "juego de mesa"
     const decoracion = "decoracion"
 
     const classes = useStyle()
