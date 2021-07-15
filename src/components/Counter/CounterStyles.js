@@ -35,7 +35,7 @@ export const counterStyles = theme => {
         buttonCart: {
             ...commonAlign,
             marginTop: '10px',
-            border: 'solid 1px #5c4000',
+            border: 'solid 1px #31352E',
             fontFamily: 'Bubblegum Sans, cursive',
             ...commonColor,
             '&:hover':{

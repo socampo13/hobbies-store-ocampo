@@ -16,7 +16,7 @@ export const finishPurchaseButtonStyles = theme => {
             border: 'solid 1px #5c4000',
             fontFamily: 'Bubblegum Sans, cursive',
             width: '10em',
-            color: '#81B622',
+            color: '#31352E',
             padding: '6px 8px',
             textTransform: 'uppercase',
             textAlign: 'center',

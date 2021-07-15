@@ -20,10 +20,10 @@ export const itemStyles = theme => {
         titleLink:{
             textDecoration: 'none',
             '&:visited':{
-                color: '#000000'
+                color: 'inherit'
             },
             '&:hover':{
-                color: '#f5ab00'
+                color: '#81B622'
             }
         }
     })

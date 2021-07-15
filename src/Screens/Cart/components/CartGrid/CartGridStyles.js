@@ -27,11 +27,11 @@ export const cartGridStyles = theme => {
         buttonDelete: {
             marginTop: '10px',
             border: 'solid 1px #5c4000',
-            fontFamily: 'Rubik',
-            color: '#5c4000',
+            fontFamily: 'Bubblegum Sans, cursive',
+            color: '#31352E',
             '&hover':{
-                color: '#FFFFF',
-                backgroundColor: '#5c4000',
+                color: '#ffffff',
+                backgroundColor: '#81B622',
             }
         },
     })
