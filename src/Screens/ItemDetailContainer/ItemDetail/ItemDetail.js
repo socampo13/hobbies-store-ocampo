@@ -53,7 +53,6 @@ export const ItemDetail = props => {
                 <Typography variant="h3" className={classes.titulo}>{detalleProducto.title}</Typography>
                 <Typography variant="h5">{detalleProducto.description}</Typography>
                 <Typography className={classes.precio}>${detalleProducto.price}</Typography>                
-                <Typography variant="h6"> Material: {detalleProducto.material}</Typography>
                 {
                     click ? 
                     <FinishPurchaseButton clickCancelar={clickCancelar}/>

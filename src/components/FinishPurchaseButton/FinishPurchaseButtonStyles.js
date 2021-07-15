@@ -24,7 +24,7 @@ export const finishPurchaseButtonStyles = theme => {
             fontSize: '0.875rem',
             '&:hover':{
                 color: '#31352E',
-                backgroundColor: '#5c4000',
+                backgroundColor: '#81B622',
             }
 
         }
