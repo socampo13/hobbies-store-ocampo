@@ -16,7 +16,7 @@ export const NavBar = props => {
 
     const classes = useStyle()
     return <>
-        <AppBar className={classes.appBar}>
+        <AppBar className={classes.appBar} position="fixed">
             <Toolbar className={classes.toolBar}>
                 <Typography variant='h3' className={classes.title}>
                     <Link className={classes.titleLink} to={'/'}>Hobbies Store</Link>
