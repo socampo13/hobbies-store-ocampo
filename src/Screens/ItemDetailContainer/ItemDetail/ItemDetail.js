@@ -16,14 +16,22 @@ export const ItemDetail = props => {
 
     const classes = useStyle();
     const { detalleProducto } = props;
-    const [cantidadProducto, setCantidadProducto] = useState(0)
+    const [cantidadProducto, setCantidadProducto] = useState(1)
     const [click, setClick] = useState(false)
     const {addItem, removeItem} = useContext(CartContext)
 
-    const onAdd = cantidad => {
+    const onAddToCart = cantidad => {
         setCantidadProducto(cantidad); 
         setClick(true);
         addItem({item: detalleProducto, quantity: cantidad}) 
+    }
+
+    const onAdd = () => {
+        setCantidadProducto(cantidadProducto + 1)
+    }
+
+    const onDiscount = () => {
+        setCantidadProducto(cantidadProducto -1)
     }
 
     const clickCancelar = cl =>{
@@ -57,7 +65,7 @@ export const ItemDetail = props => {
                     click ? 
                     <FinishPurchaseButton clickCancelar={clickCancelar}/>
                     :
-                    <Counter stock={detalleProducto.stock} valorInicial={1}  cantidadProducto={cantidadProducto} onAdd={onAdd}/>
+                    <Counter stock={detalleProducto.stock} valorInicial={1} cantidadProducto={cantidadProducto} onAddToCart={onAddToCart} onAdd={onAdd} onDiscount={onDiscount}/>
                 }
 
             </Grid>

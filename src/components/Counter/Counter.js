@@ -9,26 +9,25 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 const useStyle = makeStyles((theme) => counterStyles(theme));
 
 export const Counter = props => {
-    const {stock, valorInicial, cantidadProducto, onAdd} = props;
+    const {stock, valorInicial, cantidadProducto, onAddToCart, onDiscount, onAdd} = props;
 
     const classes = useStyle()
-    const [count, setCount] = useState(valorInicial > cantidadProducto ? valorInicial : cantidadProducto);
 
-    const handleChangeCount = () => {
+    /* const handleChangeCount = () => {
         setCount(count + 1);
     }
     const handleChangeDiscount = () => {
         setCount(count - 1);
     }
-    
+     */
     return<div className={classes.generalContainer}> 
         <div className={classes.container}>
-            <Typography variant="h4" className={classes.counter}>{count}</Typography>
+            <Typography variant="h4" className={classes.counter}>{cantidadProducto}</Typography>
             <div className={classes.buttonsContainer}>
-                <IconButton className={classes.counterButtons} onClick={() => handleChangeCount()} disabled={count < stock ? false : true}>
+                <IconButton className={classes.counterButtons} onClick={() => onAdd()} disabled={cantidadProducto >= stock }>
                     <AddCircleOutlineIcon/>
                 </IconButton>
-                <IconButton className={classes.counterButtons} onClick={() => handleChangeDiscount()} disabled={count === valorInicial ? true : false}>
+                <IconButton className={classes.counterButtons} onClick={() => onDiscount()} disabled={cantidadProducto === 1 }>
                     <RemoveCircleOutlineIcon/>
                 </IconButton>
             </div>
@@ -38,7 +37,7 @@ export const Counter = props => {
                 <Button 
                     className={classes.buttonCart}
                     startIcon={<AddShoppingCartIcon/>}
-                    onClick={() => onAdd(count)}
+                    onClick={() => onAddToCart(cantidadProducto)}
                     disabled={stock === 0 ? true : false}
                 >
                     Agregar al carrito
