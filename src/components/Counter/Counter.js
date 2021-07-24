@@ -15,20 +15,20 @@ export const Counter = props => {
     const [count, setCount] = useState(valorInicial > cantidadProducto ? valorInicial : cantidadProducto);
 
     const handleChangeCount = () => {
-        setCount(count+1);
+        setCount(count + 1);
     }
     const handleChangeDiscount = () => {
-        setCount(count-1);
+        setCount(count - 1);
     }
     
     return<div className={classes.generalContainer}> 
         <div className={classes.container}>
             <Typography variant="h4" className={classes.counter}>{count}</Typography>
             <div className={classes.buttonsContainer}>
-                <IconButton className={classes.counterButtons} onClick={e => handleChangeCount()} disabled={count < stock ? false : true}>
+                <IconButton className={classes.counterButtons} onClick={() => handleChangeCount()} disabled={count < stock ? false : true}>
                     <AddCircleOutlineIcon/>
                 </IconButton>
-                <IconButton className={classes.counterButtons} onClick={e => handleChangeDiscount()} disabled={count === valorInicial ? true : false}>
+                <IconButton className={classes.counterButtons} onClick={() => handleChangeDiscount()} disabled={count === valorInicial ? true : false}>
                     <RemoveCircleOutlineIcon/>
                 </IconButton>
             </div>
