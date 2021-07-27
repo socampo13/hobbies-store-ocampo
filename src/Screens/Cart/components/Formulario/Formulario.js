@@ -20,10 +20,10 @@ export const Formulario = props => {
     return <Card variant='outlined' className={classes.cardContainer}>
         <CardContent className={classes.CardContent}>
             <form onSubmit={submitForm}>
-            <TextField id="standard-full-width" fullWidth name="nombre" label="Nombre" required onChange={handleChange}/>
+                <TextField id="standard-full-width" fullWidth name="nombre" label="Nombre" required onChange={handleChange}/>
                 <TextField id="standard-full-width" fullWidth name="apellido" label="Apellido" required onChange={handleChange}/>
                 <TextField id="standard-full-width" fullWidth name= "telefono" label="Teléfono" required onChange={handleChange}  />
-                <TextField id="standard-full-width" fullWidth label="Email" name= "email" required onChange={handleChange} />
+                <TextField id="standard-full-width" fullWidth name="Email" label= "email" required onChange={handleChange} />
                 <Button type='submit' className={classes.buttonOk}>ACEPTAR</Button>
             </form>
         </CardContent>

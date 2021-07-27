@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IconButton, Typography, Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import { counterStyles } from './CounterStyles'
@@ -9,7 +9,7 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 const useStyle = makeStyles((theme) => counterStyles(theme));
 
 export const Counter = props => {
-    const {stock, valorInicial, cantidadProducto, onAddToCart, onDiscount, onAdd} = props;
+    const {stock, cantidadProducto, onAddToCart, onDiscount, onAdd} = props;
 
     const classes = useStyle()
 
