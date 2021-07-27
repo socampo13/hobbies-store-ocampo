@@ -29,7 +29,9 @@ export const CartGrid = () => {
     const [orderId, setOrderId] = useState();
     const [outOfStockArr, setOutOfStockArr] = useState([]);
     const [showForm, setShowForm] = useState(true);
-    const itemsToUpdate = dataBase.collection ("forms")
+
+
+    const itemsToUpdate = dataBase.collection ("items")
     .where(firebase.firestore.FieldPath.documentId(), 'in', itemsCart.map(i => i.item.id));
 
     const createOrder = (buyer) => {
@@ -49,24 +51,26 @@ export const CartGrid = () => {
         orders.add(newOrder).then((doc) => {
           setShowForm(false)
           setOrderId(doc.id)
+
         })
       } catch(error) {
         console.log("Add doc error:", error);
       }
+
     }
 
     const addOrderUpdateItems = (buyer) => {
       itemsToUpdate.get().then((querySnapshot) => {
         const batch = dataBase.batch();
         const outOfStock = [];
-        querySnapshot.docs.forEach((docSnapshot, idx) => {
-          if(docSnapshot.data().stock >= itemsCart[idx].quantity){
-            batch.update(docSnapshot.ref, {'stock': docSnapshot.data().stock - itemsCart[idx].quantity});
-          } else {
-            outOfStock.push({ ...docSnapshot.data(), id: docSnapshot.id });
-          }
+            querySnapshot.docs.forEach((docSnapshot, idx) => {
+              if(docSnapshot.data().stock >= itemsCart[idx].quantity){
+                batch.update(docSnapshot.ref, {'stock': docSnapshot.data().stock - itemsCart[idx].quantity});
+                } else {
+                  outOfStock.push({ ...docSnapshot.data(), id: docSnapshot.id });
+                }
         })
-        if(outOfStock.length === 0){
+        if (outOfStock.length === 0){
           batch.commit().then(() => {
             addNewOrder(buyer);
           });
