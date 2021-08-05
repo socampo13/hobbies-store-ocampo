@@ -6,6 +6,7 @@ Esta es un e-commerce utilizando React.js y Material-UI
 
 
 ## Construido con :computer:
+React.js 🔵
 JavaScript 🟡
 CSS3 🔵
 HTML5 🟠
